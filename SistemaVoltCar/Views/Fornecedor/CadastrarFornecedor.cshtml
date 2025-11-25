@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SistemaVoltCar.Models.Fornecedor;
+
 @{
+    ViewData["Title"] = "Cadastro de Fornecedor";
 }
+
+<div class="card-header">
+    <h3>Faça o cadastro de fornecedor</h3>
+</div>
+<div class="card-body">
+    <form asp-action="CadastrarFornecedor" method="post">
+        <div class="mb-3">
+            <label for="Nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Neymar Júnior" maxlength="100" required />
+        </div>
+        <div class="mb-3">
+            <label for="CNPJ" class="form-label">CNPJ:</label>
+            <input type="number" class="form-control" id="cnpj" name="cnpj" placeholder="1234567891011" maxlength="14" required />
+        </div>
+        <div class="mb-3">
+            <label for="Telefone" class="form-label">Telefone:</label>
+            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(11) 91234-5678" required />
+        </div>
+        <div class="d-flex">
+            <button type="submit" class="btn btn-secondary">Cadastrar</button>
+            <a asp-action="Index" asp-controller="Fornecedor" class="btn btn-link">Voltar</a>
+        </div>
+    </form>
+</div>
