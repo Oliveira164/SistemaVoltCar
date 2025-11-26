@@ -78,7 +78,7 @@ namespace SistemaVoltCar.Controllers
             return View(veiculo);
         }
 
-        public IActionResult ExcluirProduto(int id)
+        public IActionResult ExcluirVeiculo(int id)
         {
             // Obtém o produto específico do repositório usando o Codigo fornecido.
             _veiculoRepositorio.ExcluirVeiculo(id);

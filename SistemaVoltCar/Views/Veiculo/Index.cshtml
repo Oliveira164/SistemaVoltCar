@@ -1,5 +1,55 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IEnumerable<SistemaVoltCar.Models.Veiculo>
+
+
+<p>
+    <a asp-controller="Veiculo" asp-action="CadastrarVeiculo" class="btn btn-primary">Cadastra Veículo</a>
+</p>
+<table class="table custom-only">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.IdVeiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Valor)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdVeiculo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td class="text-center">
+                    <a asp-controller="Veiculo" asp-action="EditarVeiculo" asp-route-id="@item.IdVeiculo" class="btn btn-sm btn-warning">Editar</a>
+                    <span>|</span>
+                    <a asp-controller="Veiculo" asp-action="ExcluirVeiculo" asp-route-id="@item.IdVeiculo"
+                      onclick="return confirm('Deseja realmente excluir este item?');" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
