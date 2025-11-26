@@ -75,7 +75,7 @@ namespace SistemaVoltCar.Controllers
                 try
                 {
                     // Verifica se o fornecedor com o Codigo fornecido existe no repositório.
-                    if (_fornecedorRepositorio.Editar(fornecedor))
+                    if (_fornecedorRepositorio.EditarFornecedor(fornecedor))
                     {
                         //redireciona para a pagina index quando alterar
                         return RedirectToAction(nameof(Index));

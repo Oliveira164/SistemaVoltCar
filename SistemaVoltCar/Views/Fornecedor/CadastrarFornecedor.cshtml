@@ -19,11 +19,15 @@
         </div>
         <div class="mb-3">
             <label for="Telefone" class="form-label">Telefone:</label>
-            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(11) 91234-5678" required />
+            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="912345678" required />
         </div>
-        <div class="d-flex">
-            <button type="submit" class="btn btn-secondary">Cadastrar</button>
-            <a asp-action="Index" asp-controller="Fornecedor" class="btn btn-link">Voltar</a>
+        <div class="btn">
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+            <div class="form-group">
+                <a asp-action="Index" asp-controller="Fornecedor" class="btn btn-success">Voltar</a>
+            </div>
         </div>
     </form>
 </div>

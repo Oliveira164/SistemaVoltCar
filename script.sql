@@ -27,3 +27,4 @@ CREATE TABLE Veiculo (
 );
 
 SELECT * FROM Usuario;
+

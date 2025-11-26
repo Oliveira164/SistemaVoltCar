@@ -28,13 +28,13 @@ namespace SistemaVoltCar.Repositorio
         }
 
         //Método para buscar fornecedor pelo CNPJ
-        public Fornecedor ObterFornecedor(Int64 CNPJ)
+        public Fornecedor ObterFornecedor(int Codigo)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new("SELECT * FROM Fornecedor WHERE CNPJ = @cnpj", conexao);
-                cmd.Parameters.AddWithValue("@cnpj", CNPJ);
+                MySqlCommand cmd = new("SELECT * FROM Fornecedor WHERE IdFornecedor = @codigo", conexao);
+                cmd.Parameters.AddWithValue("@codigo", Codigo);
 
                 // Cria um adaptador de dados (não utilizado diretamente para ExecuteReader)
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -94,7 +94,7 @@ namespace SistemaVoltCar.Repositorio
         }
 
         //Método para editar os dados do fornecedor
-        public bool Editar(Fornecedor fornecedor)
+        public bool EditarFornecedor(Fornecedor fornecedor)
         {
             try
             {
