@@ -27,7 +27,7 @@ namespace SistemaVoltCar.Controllers
 
             if (usuario != null && usuario.Senha == senha)
             {
-                return RedirectToAction("Index", "Usuario");
+                return RedirectToAction("Index", "Veiculo");
             }
             ModelState.AddModelError("", "Email / Senha Inválidos");
 

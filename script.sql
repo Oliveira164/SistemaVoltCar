@@ -12,7 +12,7 @@ CREATE TABLE Usuario (
 CREATE TABLE Fornecedor (
     IdFornecedor INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(100) NOT NULL,
-    CNPJ INT(14) UNIQUE NOT NULL,
+    CNPJ BIGINT(14) UNIQUE NOT NULL,
     Telefone Decimal(11,0)
 );
 
@@ -26,3 +26,4 @@ CREATE TABLE Veiculo (
     FOREIGN KEY (IdFornecedor) REFERENCES Fornecedor(IdFornecedor)
 );
 
+SELECT * FROM Usuario;

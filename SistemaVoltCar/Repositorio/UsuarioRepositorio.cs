@@ -55,13 +55,13 @@ namespace SistemaVoltCar.Repositorio
                         usuario = new Usuario
                         {
                             // Lê o valor da coluna "Id" da linha atual do resultado, converte para inteiro e atribui à propriedade 'Id' do objeto 'usuario'.
-                            IdUsuario = Convert.ToInt32(dr["id"]),
+                            IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                             // Lê o valor da coluna "Nome" da linha atual do resultado, converte para string e atribui à propriedade 'Nome' do objeto 'usuario'.
-                            Nome = dr["nome"].ToString(),
+                            Nome = dr["Nome"].ToString(),
                             // Lê o valor da coluna "Email" da linha atual do resultado, converte para string e atribui à propriedade 'Email' do objeto 'usuario'.
-                            Email = dr["email"].ToString(),
+                            Email = dr["Email"].ToString(),
                             // Lê o valor da coluna "Senha" da linha atual do resultado, converte para string e atribui à propriedade 'Senha' do objeto 'usuario'.
-                            Senha = dr["senha"].ToString()
+                            Senha = dr["Senha"].ToString()
                         };
                     }
                     /* Retorna o objeto 'usuario'. Se nenhum usuário foi encontrado com o email fornecido, a variável 'usuario'
