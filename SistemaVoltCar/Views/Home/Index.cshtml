@@ -2,54 +2,52 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div>
+<link href="/css/home.css" rel="stylesheet" />
 
+<div>
     <video autoplay muted loop class="video-fundo">
-        <source src="/videos/video.mp4" type="video/mp4" />
+        <source src="/videos/Video_Editing_For_VoltCar_Ad.mp4" type="video/mp4" />
     </video>
 
+    <div class="veiculos">
+        <h1>O FUTURO É </h1> 
+        <h1 id="eletrico">ELÉTRICO</h1>
+        <h2>Descubra a performance e a tecnologia dos nossos veículos.</h2>
+        <a asp-controller="Usuario" asp-action="Login" class="btn">Ver estoque</a>
+    </div>
 
-    <div class="container text-center text-warning  ">
-        <h1 class="">Sistema de Clientes</h1>
-        <p class="">Tecnologia de Qualidade</p>
-        <div>
-            <button class="btn btn-outline-light me-2">Saiba Mais...</button>
+    <div class="sobre">
+        <div class="card">
+            <img src="~/img/icons8-lightning-50.png" class="card-icon" />
+            <h1>AUTONOMIA</h1>
+            <p>Baterias de longa duração que permitem você ir mais longe com uma única carga.</p>
         </div>
 
+        <div class="card">
+            <img src="~/img/icons8-velocidade-50.png" class="card-icon" />
+            <h1>PERFORMANCE</h1>
+            <p>Torque instantâneo e aceleração de 0 a 100km/h em segundos. Sinta a potência.</p>
+        </div>
+
+        <div class="card">
+            <img src="~/img/icons8-cuidado-com-a-terra-48.png" class="card-icon" />
+            <h1>SUSTENTÁVEL</h1>
+            <p>Zero emissão de carbono. Tecnologia limpa para um futuro mais verde.</p>
+        </div>
     </div>
 
+    <div class="fornecedores">
+        <h1>NOSSOS PARCEIROS</h1>
 
-    <div class="text-center mb-5">
-        <h1 class="display-4">Bem-vindo à nossa loja!</h1>
-        <p>Confira nossos produtos:</p>
-    </div>
+        <div class="janela">
+            <img src="~/img/icons8-serviço-50.png" alt="Parceiros" />
 
-
-    <section class="slideShow">
-        <!-- SLIDESHOW-->
-        <div id="carouselExample" class="carousel slide ">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="~/img/img1.jpg" class="d-block w-100" />
-                </div>
-                <div class="carousel-item">
-
-                    <img src="~/img/img2.jpg" class="d-block w-100" />
-
-                </div>
-                <div class="carousel-item">
-                    <img src="~/img/img3.jpg" class="d-block w-100" />
-                </div>
+            <div class="conteudo-texto">
+                <h2>Confiança e Inovação</h2>
+                <p>Trabalhamos com as marcas mais renomadas do mercado global de veículos elétricos (BYD, Tesla, GWM) para garantir qualidade e segurança.</p>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
 
+            <a asp-controller="Usuario" asp-action="Login" class="btn btn-parceiro">Conhecer Parceiros</a>
+        </div>
+    </div>
 </div>
