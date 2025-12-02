@@ -7,6 +7,12 @@
 <div class="card-header">
    <h3>Faça seu cadastro</h3>
 </div>
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-center" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i> @TempData["MensagemSucesso"]
+    </div>
+}
 <div class="card-body">
     <form asp-action="Cadastro" method="post">
         <div class="mb-3">

@@ -27,7 +27,7 @@ namespace SistemaVoltCar.Controllers
 
             if (usuario != null && usuario.Senha == senha)
             {
-                return RedirectToAction("CadastrarFornecedor", "Fornecedor");
+                return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Email / Senha Inválidos");
 
@@ -45,7 +45,8 @@ namespace SistemaVoltCar.Controllers
             if (ModelState.IsValid)
             {
                 _usuarioRepositorio.CadastrarUsuario(usuario);
-                return RedirectToAction("Login", "Usuario");
+                TempData["MensagemSucesso"] = "Cadastro realizado com sucesso! Faça login.";
+                return RedirectToAction("Cadastro", "Usuario");
             }
             return View(usuario);
         }
