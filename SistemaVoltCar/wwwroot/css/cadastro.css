@@ -1,0 +1,102 @@
+﻿.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; 
+    background-color: transparent;
+}
+
+.cadastro-card {
+    margin-top: 10px;
+    background-color: #000;
+    width: 400px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    color: white;
+}
+
+.toggle-switch {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 5px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.toggle-btn.active {
+        background-color: #00C2E0; 
+        color: #000;
+}
+
+    
+.toggle-btn:not(.active):hover {
+        background-color: #f0f0f0;
+}
+
+.form-label {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-box {
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-box .icon {
+        font-size: 20px;
+        color: #000;
+        margin-right: 10px;
+}
+
+.input-box input {
+        border: none;
+        outline: none;
+        background: transparent;
+        width: 100%;
+        font-size: 16px;
+        color: #333;
+}
+
+.btn-custom {
+    width: 100%;
+    background-color: #00C2E0; 
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-custom:hover {
+        background-color: #009db5;
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(0, 194, 224, 0.4);
+}

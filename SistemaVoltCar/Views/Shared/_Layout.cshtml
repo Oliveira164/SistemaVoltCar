@@ -10,20 +10,20 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-light bg-black">
             <div class="container-fluid bg-black">
-                <a class="navbar-brand" asp-area="" asp-controller="Usuario" asp-action="Login"><img src="~/img/logovoltcar.png" id="logo"/></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+                <a class="navbar-brand" asp-area="" asp-controller="Usuario" asp-action="Login">
+                    <img src="~/img/logovoltcar.png" id="logo" />
+                </a>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Login">Login</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Cadastro">📝 Cadastro</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Cadastro">Cadastro</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Login">👤 Login</a>
                         </li>
                     </ul>
                 </div>
@@ -36,7 +36,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted bg-black">
+    <footer class="footer text-muted bg-black">
         <div class="container text-white">
             &copy; 2025 - CoreDev - Todos os direitos reservados.
             <a href="https://www.instagram.com/voltcar3/" target="_blank" class="logo"><img src="~/img/icons8-instagram-30.png" alt="instagram" /></a>

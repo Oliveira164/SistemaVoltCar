@@ -1,27 +1,103 @@
-html {
-  font-size: 14px;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #ffff;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #000;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    header .navbar {
+        width: 100%;
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    header .container-fluid {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+#logo {
+    max-width: 150px;
+    margin-bottom: 40px;
+    display: block;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+header .navbar-collapse {
+    width: 100%;
+    display: flex;
+    flex-basis: auto;
 }
 
-body {
-  margin-bottom: 60px;
+header .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
 }
 
-.logo{
-    margin-left: 20px;
+header .nav-item {
+    width: 100%;
+    padding-left: 30px;
 }
 
+header .nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+    header .nav-link:hover {
+        color: #00d2ff;
+        transform: translateX(10px);
+    }
+
+.navbar-toggler {
+    display: none;
+}
+
+.container {
+    background-color: transparent !important;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    max-width: 100%;
+    min-height: calc(10vh - 70px);
+    display: flex;
+}
+
+    .container main {
+        width: 100%; 
+        flex: 1;
+    }
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 19px 0;
+    position: relative;
+    height: 80px; 
+}
+
+footer img{
+    margin-left: 30px;
+    margin-bottom: 6px;
+}
