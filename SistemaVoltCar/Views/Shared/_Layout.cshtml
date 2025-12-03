@@ -9,39 +9,54 @@
     <link rel="stylesheet" href="~/SistemaVoltCar.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-black">
-            <div class="container-fluid bg-black">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Usuario" asp-action="Login">
-                    <img src="~/img/logovoltcar.png" id="logo" />
-                </a>
+    <div class="d-flex" id="wrapper">
 
-                <div class="navbar-collapse collapse d-sm-inline-flex">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Cadastro">📝 Cadastro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Login">👤 Login</a>
-                        </li>
-                    </ul>
+        <header id="sidebar-wrapper">
+            <nav class="navbar navbar-dark">
+                <div class="container-fluid d-flex flex-column align-items-center">
+
+                    <a class="navbar-brand mb-4 mt-2" asp-area="" asp-controller="Usuario" asp-action="Login">
+                        <img src="~/img/logovoltcar.png" id="logo" alt="Logo VoltCar" />
+                    </a>
+
+                    <button class="navbar-toggler d-lg-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse w-100" id="navbarNav">
+                        <ul class="navbar-nav w-100 text-center text-lg-start">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Usuario" asp-action="Cadastro">📝 Cadastro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-login-nav" asp-area="" asp-controller="Usuario" asp-action="Login">👤 Login</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            </nav>
+        </header>
+
+        <div id="page-content-wrapper">
+            <main role="main" class="flex-shrink-0">
+                <div class="container-fluid p-0">
+                    @RenderBody()
+                </div>
+            </main>
+
+            <footer class="footer mt-auto py-3 bg-black text-white">
+                <div class="container text-center">
+                    <span>&copy; 2025 - CoreDev - Todos os direitos reservados.</span>
+                    <a href="https://www.instagram.com/voltcar3/" target="_blank" class="ms-2">
+                        <img src="~/img/icons8-instagram-30.png" alt="Instagram" style="width: 24px; vertical-align: middle;" />
+                    </a>
+                </div>
+            </footer>
+        </div>
+
     </div>
 
-    <footer class="footer text-muted bg-black">
-        <div class="container text-white">
-            &copy; 2025 - CoreDev - Todos os direitos reservados.
-            <a href="https://www.instagram.com/voltcar3/" target="_blank" class="logo"><img src="~/img/icons8-instagram-30.png" alt="instagram" /></a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

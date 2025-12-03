@@ -2,35 +2,38 @@
     ViewData["Title"] = "Home Page";
 }
 
-<link href="/css/home.css" rel="stylesheet" />
+<link href="~/css/home.css" rel="stylesheet" />
 
-<div>
-    <video autoplay muted loop class="video-fundo">
-        <source src="/videos/Video_Editing_For_VoltCar_Ad.mp4" type="video/mp4" />
+<div class="hero-section">
+    <video autoplay muted loop class="video-fundo" poster="~/img/fundo-fallback.jpg">
+        <source src="~/videos/Video_Editing_For_VoltCar_Ad.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos HTML5.
     </video>
 
     <div class="veiculos">
-        <h1>O FUTURO É </h1> 
+        <h1>O FUTURO É </h1>
         <h1 id="eletrico">ELÉTRICO</h1>
         <h2>Descubra a performance e a tecnologia dos nossos veículos.</h2>
         <a asp-controller="Veiculo" asp-action="Index" class="btn">Ver estoque</a>
     </div>
+</div>
 
+<div class="conteudo-pagina">
     <div class="sobre">
         <div class="card">
-            <img src="~/img/icons8-lightning-50.png" class="card-icon" />
+            <img src="~/img/icons8-lightning-50.png" class="card-icon" alt="Ícone Autonomia" />
             <h1>AUTONOMIA</h1>
             <p>Baterias de longa duração que permitem você ir mais longe com uma única carga.</p>
         </div>
 
         <div class="card">
-            <img src="~/img/icons8-velocidade-50.png" class="card-icon" />
+            <img src="~/img/icons8-velocidade-50.png" class="card-icon" alt="Ícone Performance" />
             <h1>PERFORMANCE</h1>
             <p>Torque instantâneo e aceleração de 0 a 100km/h em segundos. Sinta a potência.</p>
         </div>
 
         <div class="card">
-            <img src="~/img/icons8-cuidado-com-a-terra-48.png" class="card-icon" />
+            <img src="~/img/icons8-cuidado-com-a-terra-48.png" class="card-icon" alt="Ícone Sustentabilidade" />
             <h1>SUSTENTÁVEL</h1>
             <p>Zero emissão de carbono. Tecnologia limpa para um futuro mais verde.</p>
         </div>
