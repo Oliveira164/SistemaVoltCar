@@ -1,46 +1,43 @@
-﻿@model SistemaVoltCar.Models.Fornecedor;
+﻿@model SistemaVoltCar.Models.Fornecedor
 
-<div>
-    <h1 class="titulo-for">Editar Fornecedor</h1>
-</div>
+@{
+    ViewData["Title"] = "Editar Fornecedor";
+}
 
-<hr />
-<div class="col-md-4">
-    <form asp-action="EditarFornecedor" method="post">
-        @Html.AntiForgeryToken()
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<link href="~/css/fornecedor_index.css" rel="stylesheet" />
 
-        <div class="form-group">
-            <input type="hidden" asp-for="IdFornecedor" class="form-control" />
-            <span asp-validation-for="IdFornecedor" class="text-danger"></span>
-        </div>
+<div class="container mt-5">
+    <h1 class="text-center titulo-glitch mb-4">EDITAR <span class="texto-destaque">FORNECEDOR</span></h1>
 
-        <div class="form-group">
-            <label asp-for="Nome" class="control-label"></label>
-            <input asp-for="Nome" class="form-control" />
-            <span asp-validation-for="Nome" class="text-danger"></span>
-        </div>
+    <div class="card-body" style="max-width: 600px; margin: 0 auto;">
+        <form asp-action="EditarFornecedor" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group">
-            <label asp-for="CNPJ" class="control-label"></label>
-            <input asp-for="CNPJ" class="form-control" />
-            <span asp-validation-for="CNPJ" class="text-danger"></span>
-        </div>
+            <input type="hidden" asp-for="IdFornecedor" />
 
-        <div class="form-group">
-            <label asp-for="Telefone" class="control-label"></label>
-            <input asp-for="Telefone" class="form-control" />
-            <span asp-validation-for="Telefone" class="text-danger"></span>
-        </div>
-
-        <div class="btn">
-            <div class="form-group">
-                <input type="submit" value="Alterar" class="btn btn-primary" />
+            <div class="mb-3">
+                <label asp-for="Nome" class="form-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <a asp-action="Index" class="btn btn-success">Voltar</a>
+            <div class="mb-3">
+                <label asp-for="CNPJ" class="form-label"></label>
+                <input asp-for="CNPJ" class="form-control" />
+                <span asp-validation-for="CNPJ" class="text-danger"></span>
             </div>
-        </div>
-    </form>
+
+            <div class="mb-3">
+                <label asp-for="Telefone" class="form-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <input type="submit" value="SALVAR ALTERAÇÕES" class="btn btn-primary btn-lg" />
+                <a asp-action="Index" class="btn btn-success btn-lg">VOLTAR</a>
+            </div>
+        </form>
+    </div>
 </div>

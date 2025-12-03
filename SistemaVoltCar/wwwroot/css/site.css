@@ -1,7 +1,7 @@
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #101010;
 }
@@ -10,20 +10,20 @@ html, body {
     display: flex;
     width: 100%;
     min-height: 100vh;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 #sidebar-wrapper {
     background-color: #000;
-    width: 100%; 
-    z-index: 10000; 
+    width: 100%;
+    z-index: 10000;
     position: relative;
     border-bottom: 1px solid #333;
 }
 
 #page-content-wrapper {
     width: 100%;
-    flex: 1; 
+    flex: 1;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -31,7 +31,9 @@ html, body {
 }
 
 main {
-    flex: 1; 
+    flex: 1;
+    padding-bottom: 80px;
+    width: 100%;
 }
 
 #logo {
@@ -50,7 +52,7 @@ main {
     .navbar-nav .nav-link:hover {
         color: #00C2E0 !important;
         background-color: rgba(0, 194, 224, 0.1);
-        padding-left: 25px; 
+        padding-left: 25px;
     }
 
 .btn-login-nav {
@@ -63,11 +65,12 @@ footer {
     position: relative;
     z-index: 10;
     background-color: #000;
+    margin-top: auto; 
 }
 
 @media (min-width: 992px) {
     #wrapper {
-        display: block;
+        display: block; 
     }
 
     #sidebar-wrapper {
@@ -85,12 +88,12 @@ footer {
     }
 
     #page-content-wrapper {
-        margin-left: 260px; 
+        margin-left: 260px;
         width: auto; 
-        display: flex; 
+        display: flex;
         flex-direction: column;
-        min-height: 100vh; 
-        overflow-x: hidden; 
+        min-height: 100vh;
+        overflow-x: hidden;
     }
 
     .navbar {

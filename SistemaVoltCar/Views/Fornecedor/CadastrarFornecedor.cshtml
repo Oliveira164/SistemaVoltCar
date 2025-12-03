@@ -1,33 +1,37 @@
-﻿@model SistemaVoltCar.Models.Fornecedor;
+﻿@model SistemaVoltCar.Models.Fornecedor
 
 @{
     ViewData["Title"] = "Cadastro de Fornecedor";
 }
 
-<div class="card-header">
-    <h3>Faça o cadastro de fornecedor</h3>
-</div>
-<div class="card-body">
-    <form asp-action="CadastrarFornecedor" method="post">
-        <div class="mb-3">
-            <label for="Nome" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Neymar Júnior" maxlength="100" required />
-        </div>
-        <div class="mb-3">
-            <label for="CNPJ" class="form-label">CNPJ:</label>
-            <input type="number" class="form-control" id="cnpj" name="cnpj" placeholder="1234567891011" maxlength="14" required />
-        </div>
-        <div class="mb-3">
-            <label for="Telefone" class="form-label">Telefone:</label>
-            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="912345678" required />
-        </div>
-        <div class="btn">
-            <div class="form-group">
-                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+<link href="~/css/fornecedor_index.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <h1 class="text-center titulo-glitch mb-4">NOVO <span class="texto-destaque">FORNECEDOR</span></h1>
+
+    <div class="card-body" style="max-width: 600px; margin: 0 auto;">
+        <form asp-action="CadastrarFornecedor" method="post">
+
+            <div class="mb-3">
+                <label for="Nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex: Baterias Moura" maxlength="100" required />
             </div>
-            <div class="form-group">
-                <a asp-action="Index" asp-controller="Fornecedor" class="btn btn-success">Voltar</a>
+
+            <div class="mb-3">
+                <label for="CNPJ" class="form-label">CNPJ:</label>
+                <input type="number" class="form-control" id="cnpj" name="cnpj" placeholder="00000000000100" maxlength="14" required />
             </div>
-        </div>
-    </form>
+
+            <div class="mb-3">
+                <label for="Telefone" class="form-label">Telefone:</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="11999999999" required />
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <input type="submit" value="CADASTRAR" class="btn btn-primary btn-lg" />
+                <a asp-action="Index" asp-controller="Fornecedor" class="btn btn-success btn-lg">VOLTAR</a>
+            </div>
+
+        </form>
+    </div>
 </div>

@@ -1,67 +1,63 @@
 ﻿@model IEnumerable<SistemaVoltCar.Models.Fornecedor>
 
+@{
+    ViewData["Title"] = "Fornecedores";
+}
 
-<p>
-    <a asp-controller="Fornecedor" asp-action="CadastrarFornecedor" class="btn btn-primary">Cadastra Fornecedor</a>
-</p>
-<p>
-    <a asp-controller="Veiculo" asp-action="Index" class="btn btn-primary">Aqui você verá os veículos cadastrados</a>
-</p>
+<link href="~/css/fornecedor_index.css" rel="stylesheet" />
 
-<table class="table custom-only">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(Model => Model.IdFornecedor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.CNPJ)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.Telefone)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="hero-banner">
+    <h1 class="titulo-glitch">FORNECEDORES <br> <span class="texto-destaque">ATUAIS</span></h1>
+    <p style="color: #ccc; margin-bottom: 30px;">
+        Veja os atuais fornecedores da nossa concessionária e cadastre, exclua ou edite os fornecedores.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3">
+        <a asp-controller="Fornecedor" asp-action="CadastrarFornecedor" class="btn btn-primary">Cadastra fornecedor</a>
+
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Voltar para Home</a>
+    </div>
+</div>
+
+<div class="table-container">
+    <table class="table custom-only">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdFornecedor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CNPJ)
-                </td>
-                <td>
-                    @{
-                        // Converte para string e remove caracteres não numéricos para garantir
-                        var tel = item.Telefone.ToString().Replace(".", "").Replace(",", "").Replace("-", "").Replace(" ", "");
-
-                        // Tenta converter para número (long) para aplicar a máscara
-                        if (long.TryParse(tel, out long foneNumerico))
-                        {
-                            // Formata: (00) 00000-0000
-                            @string.Format("{0:(##) #####-####}", foneNumerico)
-                        }
-                        else
-                        {
-                            @item.Telefone
-                        }
-                    }
-                </td>
-                <td class="text-center">
-                    <a asp-controller="Fornecedor" asp-action="EditarFornecedor" asp-route-id="@item.IdFornecedor" class="btn btn-sm btn-warning">Editar</a>
-                    <span>|</span>
-                    <a asp-controller="Fornecedor" asp-action="ExcluirFornecedor" asp-route-id="@item.IdFornecedor"
-                       onclick="return confirm('Deseja realmente excluir este item?');" class="btn btn-sm btn-danger">Excluir</a>
-                </td>
+                <th>@Html.DisplayNameFor(model => model.IdFornecedor)</th>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <th>@Html.DisplayNameFor(model => model.CNPJ)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefone)</th>
+                <th class="text-center">Ação</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.IdFornecedor)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CNPJ)</td>
+                    <td>
+                        @{
+                            var tel = item.Telefone.ToString().Replace(".", "").Replace(",", "").Replace("-", "").Replace(" ", "");
+                            if (long.TryParse(tel, out long foneNumerico))
+                            {
+                                @string.Format("{0:(##) #####-####}", foneNumerico)
+                            }
+                            else
+                            {
+                                @item.Telefone
+                            }
+                        }
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="EditarFornecedor" asp-route-id="@item.IdFornecedor" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="ExcluirFornecedor" asp-route-id="@item.IdFornecedor"
+                           onclick="return confirm('Deseja realmente excluir este fornecedor?');"
+                           class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
