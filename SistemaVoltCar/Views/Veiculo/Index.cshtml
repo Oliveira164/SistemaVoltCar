@@ -1,59 +1,53 @@
 ﻿@model IEnumerable<SistemaVoltCar.Models.Veiculo>
 
+@{
+    ViewData["Title"] = "Veículos em Estoque";
+}
 
-<p>
-    <a asp-controller="Veiculo" asp-action="CadastrarVeiculo" class="btn btn-primary">Cadastra Veículo</a>
-</p>
-<p>
-    <a asp-controller="Fornecedor" asp-action="Index" class="btn btn-primary">Aqui você verá os fornecedores atuais</a>
-</p>
+<link href="~/css/veiculo.css" rel="stylesheet" />
 
-<table class="table custom-only">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(Model => Model.IdVeiculo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.Ano)
-            </th>
-            <th>
-                @Html.DisplayNameFor(Model => Model.Valor)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="hero-banner">
+    <h1 class="titulo-glitch">VEÍCULOS EM <br> <span class="texto-destaque">ESTOQUE</span></h1>
+    <p style="color: #ccc; margin-bottom: 30px;">
+        Veja os veículos que estão no estoque atualmente e adicione, edite ou exclua os veículos.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3">
+        <a asp-controller="Veiculo" asp-action="CadastrarVeiculo" class="btn btn-primary">Cadastra veículo</a>
+
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Voltar para home</a>
+    </div>
+</div>
+
+<div class="table-container">
+    <table class="table custom-only">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdVeiculo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Modelo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Marca)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ano)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-                </td>
-                <td class="text-center">
-                    <a asp-controller="Veiculo" asp-action="EditarVeiculo" asp-route-id="@item.IdVeiculo" class="btn btn-sm btn-warning">Editar</a>
-                    <span>|</span>
-                    <a asp-controller="Veiculo" asp-action="ExcluirVeiculo" asp-route-id="@item.IdVeiculo"
-                      onclick="return confirm('Deseja realmente excluir este item?');" class="btn btn-sm btn-danger">Excluir</a>
-                </td>
+                <th>@Html.DisplayNameFor(model => model.IdVeiculo)</th>
+                <th>@Html.DisplayNameFor(model => model.Modelo)</th>
+                <th>@Html.DisplayNameFor(model => model.Marca)</th>
+                <th>@Html.DisplayNameFor(model => model.Ano)</th>
+                <th>@Html.DisplayNameFor(model => model.Valor)</th>
+                <th class="text-center">Ação</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.IdVeiculo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Modelo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Marca)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ano)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Valor)</td>
+                    <td class="text-center">
+                        <a asp-controller="Veiculo" asp-action="EditarVeiculo" asp-route-id="@item.IdVeiculo" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-controller="Veiculo" asp-action="ExcluirVeiculo" asp-route-id="@item.IdVeiculo"
+                           onclick="return confirm('Deseja realmente excluir este veículo?');"
+                           class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
